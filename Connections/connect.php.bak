@@ -1,0 +1,15 @@
+<?php
+# FileName="Connection_php_mysql.php"
+# Type="Oracle"
+# HTTP="true"
+$hostname_connect = "localhost";
+$database_connect = "localhost/ORCL";
+$username_connect = "test";
+$password_connect = "wscwsc";
+$connect = oci_connect($username_connect, $password_connect, $database_connect);
+if (!$connect) {
+    $e = oci_error();
+    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+}
+
+?>
